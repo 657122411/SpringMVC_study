@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--这是基于XML-->
+    <!--配置handlermapping 将URL请求映射到handler-->
+    <!--<bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+        <!--&lt;!&ndash;配置mapping&ndash;&gt;-->
+        <!--<property name="mappings">-->
+            <!--<props>-->
+                <!--&lt;!&ndash;配置test请求对应的handler&ndash;&gt;-->
+                <!--<prop key="/test">testHandler</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--配置handler-->
+    <bean id="testHandler" class="com.tjh.handler.MyHandler"></bean>
+
+
+    <!--注解方式-->
+    <!--将AnnotationHandler自动扫描到IOC容器中-->
+    <context:component-scan base-package="com.tjh.handler"></context:component-scan>
+
+
+
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置前缀-->
+        <property name="prefix" value="/"></property>
+        <!--配置后缀-->
+        <property name="suffix" value=".jsp"></property>
+        <!--变成/show.jsp-->
+    </bean>
+</beans>
