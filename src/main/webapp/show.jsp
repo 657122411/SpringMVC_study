@@ -12,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
-    ${name}
+    ${name}<br>
+    商品名称${requestScope.goods.name}<br>
+    价格${goods.price}
 </body>
 </html>
