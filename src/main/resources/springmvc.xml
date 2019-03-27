@@ -21,8 +21,10 @@
 
     <!--注解方式-->
     <!--将AnnotationHandler自动扫描到IOC容器中-->
-    <context:component-scan base-package="com.tjh.handler"></context:component-scan>
+    <!--<context:component-scan base-package="com.tjh.handler"></context:component-scan>-->
+    <!--<context:component-scan base-package="com.tjh.controller"></context:component-scan>-->
 
+    <context:component-scan base-package="com.tjh"></context:component-scan>
 
 
     <!--配置视图解析器-->
